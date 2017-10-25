@@ -2,7 +2,7 @@
 
 > Communicate asynchronously from a renderer process to the main process.
 
-Process: [Renderer](../tutorial/quick-start.md#renderer-process)
+Process: [Renderer](../glossary.md#renderer-process)
 
 The `ipcRenderer` module is an instance of the
 [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) class. It provides a few
@@ -14,7 +14,7 @@ See [ipcMain](ipc-main.md) for code examples.
 
 ## Methods
 
-The `ipcRenderer` module has the following method to listen for events:
+The `ipcRenderer` module has the following method to listen for events and send messages:
 
 ### `ipcRenderer.on(channel, listener)`
 
@@ -40,20 +40,16 @@ only the next time a message is sent to `channel`, after which it is removed.
 Removes the specified `listener` from the listener array for the specified
 `channel`.
 
-### `ipcRenderer.removeAllListeners([channel])`
+### `ipcRenderer.removeAllListeners(channel)`
 
-* `channel` String (optional)
+* `channel` String
 
 Removes all listeners, or those of the specified `channel`.
-
-## Sending Messages
-
-The `ipcRenderer` module has the following methods for sending messages:
 
 ### `ipcRenderer.send(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
-* `arg` (optional)
+* `...args` any[]
 
 Send a message to the main process asynchronously via `channel`, you can also
 send arbitrary arguments. Arguments will be serialized in JSON internally and
@@ -64,7 +60,9 @@ The main process handles it by listening for `channel` with `ipcMain` module.
 ### `ipcRenderer.sendSync(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
-* `arg` (optional)
+* `...args` any[]
+
+Returns `any` - The value sent back by the [`ipcMain`](ipc-main.md) handler.
 
 Send a message to the main process synchronously via `channel`, you can also
 send arbitrary arguments. Arguments will be serialized in JSON internally and
@@ -76,10 +74,18 @@ and replies by setting `event.returnValue`.
 **Note:** Sending a synchronous message will block the whole renderer process,
 unless you know what you are doing you should never use it.
 
+### `ipcRenderer.sendTo(windowId, channel, [, arg1][, arg2][, ...])`
+
+* `windowId` Number
+* `channel` String
+* `...args` any[]
+
+Sends a message to a window with `windowid` via `channel`
+
 ### `ipcRenderer.sendToHost(channel[, arg1][, arg2][, ...])`
 
 * `channel` String
-* `arg` (optional)
+* `...args` any[]
 
 Like `ipcRenderer.send` but the event will be sent to the `<webview>` element in
 the host page instead of the main process.

@@ -4,7 +4,7 @@
 
 이 프로젝트는 기여자 규약인 [행동강령](CODE_OF_CONDUCT.md)을 준수합니다. 따라서 이
 프로젝트의 개발에 참여하려면 이 규약을 지켜야 합니다. 받아들일 수 없는 행위를 발견했을
-경우 atom@github.com로 보고하세요.
+경우 electron@github.com로 보고하세요.
 
 다음 항목들은 Electron에 기여하는 가이드라인을 제시합니다.
 참고로 이 항목들은 그저 가이드라인에 불과하며 규칙이 아닙니다. 따라서 스스로의 적절한
@@ -13,7 +13,7 @@
 ## 이슈 제출
 
 * [여기](https://github.com/electron/electron/issues/new)에서 새로운 이슈를 만들 수
-있습니다. 하지만 이슈를 작성하기 전에 아래의 항목들을 숙지하고 가능한한 이슈 보고에
+있습니다. 하지만 이슈를 작성하기 전에 아래의 항목들을 숙지하고 가능한 한 이슈 보고에
 대해 최대한 많은 정보와 자세한 설명을 포함해야 합니다. 가능하다면 다음 항목을 포함해야
 합니다:
   * 사용하고 있는 Electron의 버전
@@ -28,9 +28,9 @@
 
 ## Pull Request 하기
 
-* 가능한한 스크린샷과 GIF 애니메이션 이미지를 pull request에 추가
+* 가능한 한 스크린샷과 GIF 애니메이션 이미지를 pull request에 추가
 * JavaScript, C++과 Python등
-[참조 문서에 정의된 코딩스타일](/docs-translations/ko-KR/development/coding-style.md)을
+[참조 문서에 정의된 코딩 스타일](/docs-translations/ko-KR/development/coding-style.md)을
 준수
 * [문서 스타일 가이드](/docs-translations/ko-KR/styleguide.md)에 따라 문서를
 [Markdown](https://daringfireball.net/projects/markdown) 형식으로 작성.
